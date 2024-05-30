@@ -50,4 +50,3 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         env:
-  VITE_API_KEY: 932eb9c66b8bf620d6e39b643f970947
