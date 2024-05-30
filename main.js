@@ -16,11 +16,11 @@ wrapper.style.display = "none";
 
 const renderInfo = (data) => {
   city.innerHTML = data.name;
-  celsius.innerHTML = `${(data.main.temp - 273.15).toFixed(0)}°C`;
-  humidityPercentage.innerHTML = `${data.main.humidity}%`;
-  windSpeed.innerHTML = `${data.wind.speed}km/h`;
+  celsius.innerHTML = `${(data.main.temp - 273.15).toFixed(0)} °C`;
+  humidityPercentage.innerHTML = `${data.main.humidity} %`;
+  windSpeed.innerHTML = `${Math.round(data.wind.speed)} km/h`;
   country.innerHTML = `Country: ${data.sys.country}`;
-  pressure.innerHTML = `${data.main.pressure}hPa`;
+  pressure.innerHTML = `${data.main.pressure} hPa`;
 };
 
 const getWeather = async () => {
