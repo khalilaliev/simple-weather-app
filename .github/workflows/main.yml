@@ -50,3 +50,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         env:
+        VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
