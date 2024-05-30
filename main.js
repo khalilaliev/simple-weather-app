@@ -8,20 +8,9 @@ const celsius = document.getElementById("celsius");
 const windSpeed = document.getElementById("speed");
 const humidityPercentage = document.getElementById("percentage");
 const wrapper = document.getElementById("wrapper");
+const card = document.getElementById("card");
 
 wrapper.style.display = "none";
-// const windHumidityBox = document.getElementById("windHumidity");
-// const cityDegreeBox = document.getElementById("cityDegree");
-// const wind = document.getElementById("wind");
-// const humidity = document.getElementById("humidity");
-// const humiditySvg = document.getElementById("humiditySvg");
-// const windSvg = document.getElementById("windSvg");
-// wind.style.display = "none";
-// humidity.style.display = "none";
-// windSvg.style.display = "none";
-// humiditySvg.style.display = "none";
-// windHumidityBox.style.display = "none";
-// cityDegreeBox.style.display = "none";
 
 const renderInfo = (data) => {
   city.innerHTML = data.name;
@@ -36,12 +25,13 @@ const getWeather = async () => {
   try {
     const res = await fetch(API_URL);
     if (!res.ok) {
-      console.error("City not found");
+      card.classList.add("card-border");
     } else {
       const data = await res.json();
       console.log(data);
       renderInfo(data);
       wrapper.style.display = "block";
+      card.classList.remove("card-border");
       // wrapper.classList.add("translate-y-full");
     }
   } catch (error) {
