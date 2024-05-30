@@ -10,6 +10,7 @@ const humidityPercentage = document.getElementById("percentage");
 const wrapper = document.getElementById("wrapper");
 const card = document.getElementById("card");
 const country = document.getElementById("country");
+const pressure = document.getElementById("pressure");
 
 wrapper.style.display = "none";
 
@@ -19,6 +20,7 @@ const renderInfo = (data) => {
   humidityPercentage.innerHTML = `${data.main.humidity}%`;
   windSpeed.innerHTML = `${data.wind.speed}km/h`;
   country.innerHTML = `Country: ${data.sys.country}`;
+  pressure.innerHTML = `${data.main.pressure}hPa`;
 };
 
 const getWeather = async () => {
